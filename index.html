@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock project</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+        :root {
+            --main-bg-color: rgb(77, 105, 230);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--main-bg-color);
+            color: white;
+            font-family: 'Noto Serif', serif;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 400px;
+            padding: 0 23px;
+        }
+
+
+
+        nav ul {
+            /* height: 60px; */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+        }
+
+        nav ul li {
+            list-style: none;
+            padding: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: azure;
+        }
+
+        nav ul li a:hover {
+            color: lightgray;
+            font-weight: bold;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            
+
+        }
+
+        .search input {
+            width: 400px;
+            height: 20px;
+            border-radius: 5px;
+            margin: 0 10px 0 20px;
+            padding: 0 10px;
+
+        }
+
+        .btn {
+            border: 2px solid lightcyan;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'Noto Serif', serif;
+            font-weight: bold;
+        }
+
+
+        .jumbotron {
+
+            background-color: rgb(237, 231, 231);
+            border: 2px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50vw;
+            height: 75vh;
+            border-radius: 20px;
+            margin-top: 30px;
+
+
+
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 40px;
+            font-style: italic;
+            font-weight: 800;
+        }
+
+        .lead {
+            font-size: 30px;
+            height: 30vh;
+        }
+
+        p {
+
+            margin: 20px;
+            font-size: 30px;
+
+        }
+
+        .bt {
+            margin: 5px;
+            padding: 0 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: rgb(122, 122, 238);
+            color: white;
+
+            border: 2px solid black;
+
+        }
+    </style>
+
+
+    <script>
+        let a;
+        let date;
+        let time;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+            a = new Date();
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+
+            document.getElementById("time").innerHTML = time + "<br> ON " + date;
+        }, 1000);
+    </script>
+</head>
+
+<body>
+    <header>
+
+
+        <nav>
+            <div class="logo">
+                <img src="world-PhotoRoom (1).png">
+            </div>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Services.html">Services</a></li>
+
+            </ul>
+            <div class="search">
+                <input type="text" name="" id="" placeholder="search here">
+                <button class="btn">Search</button>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Current Time Is: <span id="time"></span></h1>
+            <p class="lead">We have got your covered.
+                Time management is the process of organizing and planning how to divide your time between different
+                activities. Get it right, and you'll end up working smarter, not harder, to get more done in less time
+                even when time is tight and pressures are high.
+            </p>
+
+
+            <hr class="my-4">
+            <p>“Time is the longest distance between two places.</p>
+            <p class="lead">
+                <a class="bt" href="#" role="button">Browse Time</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
